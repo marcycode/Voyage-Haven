@@ -1,0 +1,40 @@
+.navbar {
+    position: fixed; /* Make it fixed to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    padding: 20px;
+    z-index: 1000; /* Ensure it stays on top of other content */
+    border-color: black;
+    
+    border-bottom-width: 1px;
+  }
+  
+  /* Keep the rest of the styles unchanged */
+  .navbar-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 15px;
+  }
+  
+  .navbar-links a:hover {
+    transition: all 0.3s ease-in-out;
+    font-size: 15.5px;
+    cursor: pointer;
+  }
+
+  
