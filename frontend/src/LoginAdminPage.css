@@ -1,0 +1,68 @@
+/* LoginAdminPage.css */
+.login-admin-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('/path-to-your-background-image.jpg'); /* Replace with the actual background image path */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-form-container {
+    background: #F8F5F0;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 1.2em;
+  }
+  
+  .login-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .toggle {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .toggle label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .login-btn {
+    color: black;
+    background-color: black;
+    border-radius: 3em;
+    padding: 10px 20px;
+    border-style: 5px solid black;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  
+  
