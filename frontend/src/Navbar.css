@@ -8,9 +8,11 @@
     align-items: center;
     background-color: transparent;
     color: white;
-    padding: 20px;
+    padding: 30px;
     z-index: 1000; /* Ensure it stays on top of other content */
     border-color: black;
+    font-family: 'Montserrat';
+    font-weight: 200;
     
     border-bottom-width: 1px;
   }
@@ -38,3 +40,10 @@
   }
 
   
+  
+  .navbar-other {
+    /* Styles for when it's not the homepage */
+    background-image: url('./assets/image.jpg'); /* Replace with your actual image path */
+    background-position: top;
+    /* Additional styles as needed for non-homepage navbar */
+  }

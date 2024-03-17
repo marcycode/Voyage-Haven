@@ -1,16 +1,25 @@
 import React from 'react';
-import './Navbar.css'; // Assuming you will create a CSS file for styling
+import { Link, useLocation } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
+  const location = useLocation(); // Hook to get location object
+  const homePage = location.pathname === '/'; // Check if it's the homepage
+
+  let navbarClasses = 'navbar';
+  if (!homePage) {
+    navbarClasses += ' navbar-other'; // Add class for other pages
+  }
+
   return (
-    <nav className="navbar">
+    <nav className={navbarClasses}>
       <div className="navbar-logo">
-        <a href="/">Voyage Haven</a>
+        <Link to="/">Voyage Haven</Link>
       </div>
       <div className="navbar-links">
-        <a>Hotel Chains</a>
-        <a>Book a Room</a>
-        <a>Sign In</a>
+        <Link to="/hotel-chains">Hotel Chains</Link>
+        <Link to="/book-room">Book a Room</Link>
+        <Link to="/sign-in">Sign In</Link>
       </div>
     </nav>
   );

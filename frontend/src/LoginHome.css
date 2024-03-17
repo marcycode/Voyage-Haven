@@ -1,0 +1,68 @@
+.login-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+ 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-home-header h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .login-home-content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .login-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    background-color: #fff; /* Starting color, will override in individual IDs */
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .login-option:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  .login-option h2{
+    font-size: 1.5rem;
+  }
+  
+  #employee {
+    background-color: #17a2b8; /* Turquoise color for Hotel Employee */
+  }
+  
+  #admin {
+    background-color: #ffc107; /* Yellow color for Admin */
+  }
+  
+  .login-option h2 {
+    color: #fff;
+    margin-top: 1rem;
+  }
+  .icon{
+    color:white;
+  }
+  
