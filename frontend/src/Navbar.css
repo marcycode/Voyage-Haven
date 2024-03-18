@@ -42,8 +42,7 @@
   
   
   .navbar-other {
-    /* Styles for when it's not the homepage */
-    background-image: url('./assets/image.jpg'); /* Replace with your actual image path */
+  
+    background-image: url('./assets/image.jpg'); 
     background-position: top;
-    /* Additional styles as needed for non-homepage navbar */
   }

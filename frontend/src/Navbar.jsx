@@ -3,12 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
-  const location = useLocation(); // Hook to get location object
-  const homePage = location.pathname === '/'; // Check if it's the homepage
+  const location = useLocation(); 
+  const homePage = location.pathname === '/';
 
   let navbarClasses = 'navbar';
   if (!homePage) {
-    navbarClasses += ' navbar-other'; // Add class for other pages
+    navbarClasses += ' navbar-other';
   }
 
   return (

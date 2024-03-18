@@ -1,15 +1,15 @@
 import React from 'react';
-import './LoginHome.css'; // Make sure to create a CSS file with this name
+import './LoginHome.css'; 
 import { useNavigate } from 'react-router';
 
 function LoginHome() {
     const navigate = useNavigate();
     
     const handleAdminClick = () => {
-    navigate('/admin-login'); // This should match the route you've set up for LoginAdminPage
+    navigate('/admin-login'); 
   };
   const handleEmployeeClick = () => {
-    navigate('/employee-login'); // This should match the route you've set up for LoginAdminPage
+    navigate('/employee-login'); 
   };
 
   return (

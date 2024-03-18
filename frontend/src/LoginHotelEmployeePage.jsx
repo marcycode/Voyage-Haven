@@ -1,6 +1,6 @@
-// LoginAdminPage.jsx
+
 import React from 'react';
-import './LoginAdminPage.css'; // Make sure to create a CSS file with this name
+import './LoginAdminPage.css'; 
 
 function LoginEmployeePage() {
   return (

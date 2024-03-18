@@ -1,10 +1,9 @@
-/* LoginAdminPage.css */
 .login-admin-page {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('/path-to-your-background-image.jpg'); /* Replace with the actual background image path */
+    background-image: url('/path-to-your-background-image.jpg'); 
     background-size: cover;
     background-position: center;
   }

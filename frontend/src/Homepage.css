@@ -10,14 +10,13 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    /* background-color: black; */
+   
     background-size: cover;
     background-position: center center;
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
   }
   
   .content {
-    /* border: 1px purple solid; */
     display: flex;
     flex-direction: column;
     max-width: 1200px;
