@@ -1,4 +1,4 @@
-# Voyage Haven
+# Voyage Haven - Backend
 This is the application layer that sits between the front end and the database.
 
 JDBC is used to communicate with the postgres database.
