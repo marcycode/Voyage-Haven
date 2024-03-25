@@ -46,7 +46,7 @@
   width: 55%;
   margin-left: 4em;
   
-  text-align: left; /* Aligns the text of the filter headings and labels to the left */
+  text-align: left; 
 }
 
 .filters h2 {
@@ -63,6 +63,16 @@
   margin-bottom: 10px; 
   display: grid;
 }
+.filters select{
+  width: 20%;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  color: grey;
+  margin-bottom: 1rem;
+  display: grid;
+}
+
 
 /* Additional styles to align the filter inputs to the left */
 .filters .form-group {

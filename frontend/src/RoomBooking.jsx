@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './RoomBooking.css'; // Make sure to create and link a corresponding CSS file
+import './RoomBooking.css';
 
 const RoomBooking = () => {
   // State for each input field
@@ -12,11 +12,15 @@ const RoomBooking = () => {
   const [numberOfRooms, setNumberOfRooms] = useState({ min: '', max: '' });
   const [price, setPrice] = useState({ min: '', max: '' });
 
+  // Example data for the dropdowns
+  const hotelChains = ['Hilton', 'Marriott', 'Hyatt', 'InterContinental', 'Accor'];
+  const hotelTypes = ['Budget', 'Boutique', 'Luxury', 'Resort', 'Extended Stay'];
+
   // Event handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would handle the submission of the search form
-    // For example, you could construct a query and make an API call to fetch the results
+    // Handle the submission of the search form
+    // Construct a query and make an API call to fetch the results
   };
 
   return (
@@ -47,23 +51,29 @@ const RoomBooking = () => {
 
         <div className="filters">
           <h2>Filter By</h2>
-          <input
-            type="text"
-            placeholder="Hotel Chain"
+          <select
             value={hotelChain}
             onChange={(e) => setHotelChain(e.target.value)}
-          />
+          >
+            <option value="">Hotel Chain</option>
+            {hotelChains.map((chain) => (
+              <option key={chain} value={chain}>{chain}</option>
+            ))}
+          </select>
+          <select
+            value={hotelType}
+            onChange={(e) => setHotelType(e.target.value)}
+          >
+            <option value="">Hotel Type</option>
+            {hotelTypes.map((type) => (
+              <option key={type} value={type}>{type}</option>
+            ))}
+          </select>
           <input
             type="number"
             placeholder="Room Capacity"
             value={roomCapacity}
             onChange={(e) => setRoomCapacity(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Hotel Type"
-            value={hotelType}
-            onChange={(e) => setHotelType(e.target.value)}
           />
           <div>
             <input
@@ -96,7 +106,7 @@ const RoomBooking = () => {
         </div>
       </form>
       <div className="results">
-        {/* render the search results */}
+        {/* render the search results here */}
         {/*<h2>Hotel Results</h2>*/}
       </div>
     </div>
