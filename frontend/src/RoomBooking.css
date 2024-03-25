@@ -1,83 +1,125 @@
 .room-booking {
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
-    background: #fff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.search-inputs {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  
+  display: flex;
+  justify-content: space-between; /* Distributes space around items */
+  align-items: center; /* Align items vertically */
+  width: fit-content; /* Shrink the width to fit its content */
+}
+
+.search-inputs input[type="text"] {
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px; /* Space between the text input and the button */
+  flex: 1; /* Allow the text input to grow and fill the space */
+}
+
+.search-inputs button {
+  background-color: #ffc107;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search-inputs button i {
+  color: white;
+}
+
+.filters {
+ 
+ 
+  padding-top: 50px;
+
+  padding-right: 5em;
+  position: relative;
+  align-items: left;
+  display: grid;
+  width: 55%;
+  margin-left: 4em;
+  
+  text-align: left; /* Aligns the text of the filter headings and labels to the left */
+}
+
+.filters h2 {
+  margin-bottom: 10px;
+}
+
+.filters input[type="text"],
+.filters input[type="number"] {
+  padding: 12px;
+  margin-right: 10px;
+  width: 20%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px; 
+  display: grid;
+}
+
+/* Additional styles to align the filter inputs to the left */
+.filters .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns filter inputs to the left */
+}
+
+/* Style for the results section */
+.results {
+  align-items: end;
+  margin-left:10em ;
+  margin-top: 20px;
+}
+
+.results h2 {
+  margin-right: 10em;
+  margin-bottom: 10px;
+  align-content: center;
+  align-items: center ;
+  margin-left: auto;
+  margin-right:auto ;
+ 
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+.login-btn {
+  background-color: #28a745; /* Bootstrap green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block; /* Make the button take the full container width */
+  width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .search-inputs,
+  .filters {
+    flex-direction: column;
+  }
+
+  .search-inputs input[type="text"] {
+    margin-bottom: 10px; /* Add space when stacked */
+  }
+
+  .search-inputs button {
+    width: 100%; /* Full width on small screens */
   }
   
-  .search-fields {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+  .filters .form-group {
+    align-items: stretch; /* Makes filter inputs take full width */
   }
-  
-  .search-input {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 10px;
-    width: 200px; /* Adjust the width as needed */
-  }
-  
-  .search-button {
-    background: #ffcc00;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .filter-section {
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-  }
-  
-  .filter-section h2 {
-    font-size: 1.25rem;
-  }
-  
-  .filter-label {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  .filter-checkbox {
-    margin-right: 5px;
-  }
-  
-  .range-inputs {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .range-input {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 5px;
-  }
-  
-  .hotel-results {
-    margin-top: 20px;
-  }
-  
-  .hotel-results h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  /* Add responsive styles as needed */
-  @media (max-width: 768px) {
-    .search-fields {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    .search-input {
-      width: 100%; /* Full width on small screens */
-    }
-  
-    .range-input {
-      width: calc(50% - 5px); /* Adjust for small screens */
-    }
-  }
-  
+}
