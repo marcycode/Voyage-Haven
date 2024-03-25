@@ -1,0 +1,83 @@
+.room-booking {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background: #fff;
+  }
+  
+  .search-fields {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px; /* Adjust the width as needed */
+  }
+  
+  .search-button {
+    background: #ffcc00;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .filter-section {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  .filter-section h2 {
+    font-size: 1.25rem;
+  }
+  
+  .filter-label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .filter-checkbox {
+    margin-right: 5px;
+  }
+  
+  .range-inputs {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .range-input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  
+  .hotel-results {
+    margin-top: 20px;
+  }
+  
+  .hotel-results h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Add responsive styles as needed */
+  @media (max-width: 768px) {
+    .search-fields {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .search-input {
+      width: 100%; /* Full width on small screens */
+    }
+  
+    .range-input {
+      width: calc(50% - 5px); /* Adjust for small screens */
+    }
+  }
+  

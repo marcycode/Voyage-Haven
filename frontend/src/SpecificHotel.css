@@ -1,0 +1,48 @@
+.specific-hotel-container {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .specific-hotel-banner {
+    margin-top: 15rem;
+    /* Styling for the banner or image gallery */
+  }
+  
+  .specific-hotel-info {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: -100px; /* If you want to overlap the banner */
+    position: relative;
+    z-index: 10;
+  }
+  
+  .specific-hotel-name {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .specific-hotel-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .specific-hotel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffcc00;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .specific-hotel-description {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  
+  /* Add more styles and responsive design as needed */
+  

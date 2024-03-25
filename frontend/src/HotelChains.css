@@ -1,0 +1,62 @@
+.hotel-chains {
+    display: flex;
+    flex-direction: grid;
+    align-items: center;
+    padding: 7em;
+}
+
+.hotel-card {
+   
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 20em; /* Adjust the width as needed */
+    border-radius: 10px;
+    height: 50em;
+    overflow: hidden;
+}
+
+.hotel-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-image {
+    width: 100%;
+    display: block;
+}
+
+.hotel-info{
+    padding-top: 1.5em;
+}
+
+.hotel-info h3 {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.rating-button {
+    background-color: #ffcc00;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+   
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    margin: 4px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.price-range {
+    background-color: #14BCA8;
+    color: rgb(255, 255, 255);
+    padding: 6px 12px;
+    font-size: 0.9em;
+    border: 1px solid grey;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 20px;
+}

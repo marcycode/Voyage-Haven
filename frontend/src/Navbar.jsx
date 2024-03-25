@@ -18,7 +18,7 @@ function Navbar() {
       </div>
       <div className="navbar-links">
         <Link to="/hotel-chains">Hotel Chains</Link>
-        <Link to="/book-room">Book a Room</Link>
+        <Link to="/room-booking">Book a Room</Link>
         <Link to="/sign-in">Sign In</Link>
       </div>
     </nav>
