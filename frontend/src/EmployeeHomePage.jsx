@@ -1,8 +1,8 @@
 import React from 'react';
 import './LoginHome.css';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
-function LoginHome() {
+function EmployeeHomePage() {
   const navigate = useNavigate();
 
   const handleAdminClick = () => {
@@ -20,17 +20,17 @@ function LoginHome() {
           <div className="icon-container">
             <span className="icon"><i className="fa-regular fa-user"></i></span>
           </div>
-          <h2>Hotel Employee</h2>
+          <h2>Edit Hotel Bookings</h2>
         </div>
         <div className="login-option" id="admin" onClick={handleAdminClick}>
           <div className="icon-container">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
           </div>
-          <h2>Administrator</h2>
+          <h2>Rent a Room</h2>
         </div>
       </div>
     </div>
   );
 }
 
-export default LoginHome;
+export default EmployeeHomePage;

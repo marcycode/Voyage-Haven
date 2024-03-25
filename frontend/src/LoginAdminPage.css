@@ -53,15 +53,19 @@
     margin-right: 10px;
   }
   
-  .login-btn {
-    color: black;
-    background-color: black;
-    border-radius: 3em;
-    padding: 10px 20px;
-    border-style: 5px solid black;
+  .login-btn[type="submit"] {
+    color: rgb(243, 243, 243);
+    background-color: #14BCA8;
+    border-radius:40px;
+    padding: 10px 10px;
+    border-style: 10em solid #14BCA8;
     cursor: pointer;
     width: 100%;
+    justify-items: center;
+    align-items: center;
+   
+
   }
-  
+ 
   
   

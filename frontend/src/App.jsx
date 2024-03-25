@@ -8,6 +8,8 @@ import LoginEmployeePage from './LoginHotelEmployeePage';
 import HotelChains from './HotelChains';
 import SpecificHotel from './SpecificHotel';
 import RoomBooking from './RoomBooking';
+import EmployeeHomePage from './EmployeeHomePage';
+import AdminHomePage from './AdminHomePage';
 
 function App() {
   return (
@@ -21,8 +23,11 @@ function App() {
           <Route path = "/employee-login" element={<LoginEmployeePage/>} />
           <Route path = "/hotel-chains" element={<HotelChains/>} />
           <Route path="/hotels/:hotelId" element={<SpecificHotel />} />
+          <Route path = "/employee-homepage" element={<EmployeeHomePage/>}/>
 
           <Route path = "/room-booking" element={<RoomBooking/>}/>
+          <Route path = "/adminhomepage" element={<AdminHomePage/>}/>
+          
           
 
         </Routes>
