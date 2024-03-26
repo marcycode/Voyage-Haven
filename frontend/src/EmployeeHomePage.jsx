@@ -6,11 +6,11 @@ function EmployeeHomePage() {
   const navigate = useNavigate();
 
   const handleAdminClick = () => {
-    navigate('/admin-login');
+    navigate('/edithotelbookings');
   };
 
   const handleEmployeeClick = () => {
-    navigate('/employee-login');
+    navigate('/edithotelbookings');
   };
 
   return (
@@ -26,7 +26,7 @@ function EmployeeHomePage() {
           <div className="icon-container">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
           </div>
-          <h2>Rent a Room</h2>
+          <h2>My Information</h2>
         </div>
       </div>
     </div>
