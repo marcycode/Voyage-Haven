@@ -1,12 +1,21 @@
 .room-booking {
   display: flex;
+  position: absolute;
+  top: 500px; /* Distance from the top of the container */
+  left: 650px; /* Distance from the left of the container */
+  width: 50%; /* or any size */
+  height: 100px; /* or any size */
   flex-direction: column;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  height: 100vh; /* Use the full viewport height */
+  height: 20vh; /* Use the full viewport height */
   font-family: Arial, sans-serif;
   padding: 20px;
+  background-color: white;
+  border-radius: 1.5rem;
 }
+
+
 
 .search-inputs {
   display:block;
@@ -112,21 +121,6 @@
 }
 
 /* Style for the results section */
-.results {
-  align-items: end;
-  margin-left:10em ;
-  margin-top: 20px;
-}
-
-.results h2 {
-  margin-right: 10em;
-  margin-bottom: 10px;
-  align-content: center;
-  align-items: center ;
-  margin-left: auto;
-  margin-right:auto ;
- 
-}
 
 .error-message {
   color: red;
@@ -163,3 +157,15 @@
     align-items: stretch; /* Makes filter inputs take full width */
   }
 }
+
+.hero {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+ 
+  background-size: cover;
+  background-position: center center;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+

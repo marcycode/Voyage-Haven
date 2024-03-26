@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './RoomBooking.css';
+import ImgHero from './assets/homebanner.jpg'
 
 const RoomBooking = () => {
   // State for each input field
@@ -20,7 +21,9 @@ const RoomBooking = () => {
   }
 
   return (
-    <div className="room-booking">
+    <div className='background-image'>
+      <section className="hero" style={{ backgroundImage: `url(${ImgHero})` }}></section>
+      <div className="room-booking">
       <div className='heading'>
         <h1>
           Book A Room
@@ -113,6 +116,9 @@ const RoomBooking = () => {
       </form>
     
     </div>
+
+    </div>
+    
   );
 };
 
