@@ -1,32 +1,62 @@
 .room-booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Use the full viewport height */
   font-family: Arial, sans-serif;
   padding: 20px;
 }
 
 .search-inputs {
-  margin-top: 8rem;
-  margin-bottom: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  
-  display: flex;
-  justify-content: space-between; /* Distributes space around items */
-  align-items: center; /* Align items vertically */
-  width: fit-content; /* Shrink the width to fit its content */
+  display:block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack children vertically */
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
+.room-booking h2{
+  font-size: 1em;
+  margin-bottom: -2em;
+  align-items: center;
+  color: black;
+}
+.heading{
+  display:grid;
+  font-size:3em;
+  padding-right: 2em;
+  padding-bottom: 2rem;
+
+}
+.heading h1{
+  font-weight: 500;
+}
+
+
 .search-inputs input[type="text"] {
-  padding: 15px;
+  padding: 25px;
   border: 2px solid #ccc;
   border-radius: 20px;
   margin-right: 10px; /* Space between the text input and the button */
   flex: 1; /* Allow the text input to grow and fill the space */
 }
+#searchbutton{
+  color:white;
+  font-size: 1em;
+  transition: all 0.5s ease-in-out;
+}
+#searchbutton:hover{
+  background-color:#17a2b8;
+
+}
 
 .search-inputs button {
   background-color: #ffc107;
   border: none;
-  padding: 10px 15px;
+  padding: 25px 25px;
   border-radius: 5px;
   cursor: pointer;
 }

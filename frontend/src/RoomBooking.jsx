@@ -12,44 +12,50 @@ const RoomBooking = () => {
   const [numberOfRooms, setNumberOfRooms] = useState({ min: '', max: '' });
   const [price, setPrice] = useState({ min: '', max: '' });
 
-  // Example data for the dropdowns
   const hotelChains = ['Hilton', 'Marriott', 'Hyatt', 'InterContinental', 'Accor'];
   const hotelTypes = ['Budget', 'Boutique', 'Luxury', 'Resort', 'Extended Stay'];
 
-  // Event handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the submission of the search form
-    // Construct a query and make an API call to fetch the results
-  };
+  }
 
   return (
     <div className="room-booking">
-      <h1>Where To?</h1>
+      <div className='heading'>
+        <h1>
+          Book A Room
+          </h1>
+      </div>
+      
       <form onSubmit={handleSubmit}>
+    
         <div className="search-inputs">
+        
+         
           <input
             type="text"
-            placeholder="Where to?"
-            value={whereTo}
-            onChange={(e) => setWhereTo(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Dates"
+            placeholder=" Check In Date"
             value={dates}
             onChange={(e) => setDates(e.target.value)}
           />
+           <input
+            type="text"
+            placeholder=" Check Out Date"
+            value={dates}
+            onChange={(e) => setDates(e.target.value)}
+          />
+        
+          
           <input
             type="text"
             placeholder="Location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          <button type="submit"><i className="fa fa-search"></i></button>
+          <button type="submit" id="searchbutton">Search <i className="fa fa-search"></i></button>
         </div>
 
-        <div className="filters">
+        {/*<div className="filters">
           <h2>Filter By</h2>
           <select
             value={hotelChain}
@@ -103,12 +109,9 @@ const RoomBooking = () => {
               onChange={(e) => setPrice({ ...price, max: e.target.value })}
             />
           </div>
-        </div>
+            </div>*/}
       </form>
-      <div className="results">
-        {/* render the search results here */}
-        {/*<h2>Hotel Results</h2>*/}
-      </div>
+    
     </div>
   );
 };
