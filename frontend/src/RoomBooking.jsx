@@ -6,6 +6,7 @@ const RoomBooking = () => {
   // State for each input field
   const [whereTo, setWhereTo] = useState('');
   const [dates, setDates] = useState('');
+  const [checkoutdate, setcheckoutdate] = useState('');
   const [location, setLocation] = useState('');
   const [hotelChain, setHotelChain] = useState('');
   const [roomCapacity, setRoomCapacity] = useState('');
@@ -36,25 +37,27 @@ const RoomBooking = () => {
         
          
           <input
-            type="text"
+            type="date"
             placeholder=" Check In Date"
             value={dates}
             onChange={(e) => setDates(e.target.value)}
           />
            <input
-            type="text"
+            type="date"
             placeholder=" Check Out Date"
-            value={dates}
-            onChange={(e) => setDates(e.target.value)}
+            value={checkoutdate}
+            onChange={(e) => setcheckoutdate(e.target.value)}
           />
-        
+
           
+     
           <input
             type="text"
             placeholder="Location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
+          
           <button type="submit" id="searchbutton">Search <i className="fa fa-search"></i></button>
         </div>
 

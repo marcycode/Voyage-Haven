@@ -9,6 +9,7 @@ const initialBookings = [
     bookingId: 100,
     startDate: '2024-04-01',
     endDate: '2024-04-07',
+    is_renting: true,
   },
   {
     customerId: 2,
@@ -17,6 +18,7 @@ const initialBookings = [
     bookingId: 101,
     startDate: '2024-05-15',
     endDate: '2024-05-20',
+    is_renting: true,
   },
   {
     customerId: 3,
@@ -25,6 +27,7 @@ const initialBookings = [
     bookingId: 102,
     startDate: '2024-06-10',
     endDate: '2024-06-15',
+    is_renting: false,
   },
 ];
 
@@ -39,6 +42,7 @@ const EditHotelBookings = () => {
       bookingId: '',
       startDate: '',
       endDate: '',
+      is_renting: false,
     };
     setBookings([...bookings, newBooking]);
   };
@@ -52,7 +56,10 @@ const EditHotelBookings = () => {
     const updatedBookings = [...bookings];
     if (column === 'customerId' || column === 'bookingId') {
       updatedBookings[index][column] = parseInt(value, 10);
-    } else {
+    } 
+    else if (column === 'is_renting') {
+      updatedBookings[index][column] = value === 'true';
+    }else {
       updatedBookings[index][column] = value;
     }
     setBookings(updatedBookings);
@@ -79,6 +86,7 @@ const EditHotelBookings = () => {
             <th>BookingID</th>
             <th>StartDate</th>
             <th>EndDate</th>
+            <th>Is_Renting</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -126,6 +134,15 @@ const EditHotelBookings = () => {
                   value={booking.endDate}
                   onChange={(e) => updateBooking(index, 'endDate', e.target.value)}
                 />
+              </td>
+              <td>
+                <select
+                  value={booking.is_renting.toString()}
+                  onChange={(e) => updateBooking(index, 'is_renting', e.target.value)}
+                >
+                  <option value="true">True</option>
+                  <option value="false">False</option>
+                </select>
               </td>
               <td>
                 <button onClick={() => deleteBooking(index)} id="delete"><i className="fa-solid fa-trash"></i></button>
