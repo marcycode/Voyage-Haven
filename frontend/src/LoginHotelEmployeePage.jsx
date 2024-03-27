@@ -13,12 +13,12 @@
     const [error, setError] = useState('');
 
     const handleLogin = (e) => {
-      e.preventDefault(); // Prevents the default form submit action
-      // TODO: This should be replaced with a real authentication check
+      e.preventDefault(); 
+     
       if (email === 'test@test.com' && password === 'password' && hotelName === 'VoyageHaven') {
-        navigate('/employee-homepage'); // Navigate to EmployeeHomePage upon successful login
+        navigate('/employee-homepage'); 
       } else {
-        setError('Invalid.Please try again.'); // Display error if credentials are invalid
+        setError('Invalid.Please try again.'); 
       }
     };
 

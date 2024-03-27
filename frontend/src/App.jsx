@@ -11,6 +11,8 @@ import RoomBooking from './RoomBooking';
 import EmployeeHomePage from './EmployeeHomePage';
 import AdminHomePage from './AdminHomePage';
 import EditHotelBookings from './EditHotelBookings';
+import EditHotelChains from './EditHotelChains';
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
           <Route path = "/room-booking" element={<RoomBooking/>}/>
           <Route path = "/adminhomepage" element={<AdminHomePage/>}/>
           <Route path = "/edithotelbookings" element={<EditHotelBookings/>}/>
+          <Route path = "/edithotelchains" element={<EditHotelChains/>}/>
           
           
 

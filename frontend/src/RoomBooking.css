@@ -4,14 +4,14 @@
   
   top: 40%; /* Distance from the top of the container */
   left: 25%; /* Distance from the left of the container */
-  width: 50%; /* or any size */
-  height: 100px; /* or any size */
+  width: 60%; /* or any size */
+  height: 80%; /* or any size */
   flex-direction: column;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  height: 20vh; /* Use the full viewport height */
+  height: 30vh; /* Use the full viewport height */
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding-bottom: 2rem;
   background-color: white;
   border-radius: 1.5rem;
 }

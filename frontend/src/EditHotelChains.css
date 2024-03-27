@@ -1,0 +1,81 @@
+
+.bookingsTable {
+   
+    width: 80%;
+    margin-left: 5em;
+    border-collapse: collapse;
+  }
+  
+  .bookingsTable th, .bookingsTable td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+  }
+  
+  .bookingsTable th {
+    background-color: #f2f2f2;
+  }
+  
+  
+  #add{
+
+    padding: 0.5%;
+    width: 2%;
+   
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+
+  }
+
+  #delete{
+    width: 100%;
+
+
+  }
+  td input{
+    width: 100%;
+   
+  }
+  td input[type="email"]{
+    margin-right: 8em;
+  }
+  td input[type="text"]{
+    margin-right:0em ;
+  }
+  #hotelchain{
+    margin-right: 3em;
+  }
+  
+ 
+  
+  .everything{
+    margin-top: 15em;
+    display: flexbox;
+
+    align-items: center;
+    max-height: 50%;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .everything h1{
+    margin-top: 5em;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    justify-self: center;
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #save{
+    margin-top: 2em;
+    width: 100%;
+    align-items: center;
+    font-size: 1.2em;
+  }
