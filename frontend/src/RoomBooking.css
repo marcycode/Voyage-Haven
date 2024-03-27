@@ -1,8 +1,9 @@
 .room-booking {
   display: flex;
   position: absolute;
-  top: 500px; /* Distance from the top of the container */
-  left: 650px; /* Distance from the left of the container */
+  
+  top: 40%; /* Distance from the top of the container */
+  left: 25%; /* Distance from the left of the container */
   width: 50%; /* or any size */
   height: 100px; /* or any size */
   flex-direction: column;

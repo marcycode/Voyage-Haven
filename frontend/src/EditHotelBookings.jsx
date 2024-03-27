@@ -3,26 +3,26 @@ import './EditHotelBookings.css';
 
 const initialBookings = [
   {
-    customerId: '001',
+    customerId: 1,
     firstName: 'John',
     lastName: 'Doe',
-    bookingId: 'B001',
+    bookingId: 100,
     startDate: '2024-04-01',
     endDate: '2024-04-07',
   },
   {
-    customerId: '002',
+    customerId: 2,
     firstName: 'Jane',
     lastName: 'Smith',
-    bookingId: 'B002',
+    bookingId: 101,
     startDate: '2024-05-15',
     endDate: '2024-05-20',
   },
   {
-    customerId: '003',
+    customerId: 3,
     firstName: 'Alice',
     lastName: 'Johnson',
-    bookingId: 'B003',
+    bookingId: 102,
     startDate: '2024-06-10',
     endDate: '2024-06-15',
   },
@@ -50,9 +50,21 @@ const EditHotelBookings = () => {
 
   const updateBooking = (index, column, value) => {
     const updatedBookings = [...bookings];
-    updatedBookings[index][column] = value;
+    if (column === 'customerId' || column === 'bookingId') {
+      updatedBookings[index][column] = parseInt(value, 10);
+    } else {
+      updatedBookings[index][column] = value;
+    }
     setBookings(updatedBookings);
   };
+  
+  
+  const saveChains = () => {
+    const chainsJson = JSON.stringify(bookings);
+    console.log(chainsJson);
+  
+  };
+
 
   return (
     <div className='everything'>
@@ -75,7 +87,7 @@ const EditHotelBookings = () => {
             <tr key={index}>
               <td>
                 <input
-                  type="text"
+                  type="number"
                   value={booking.customerId}
                   onChange={(e) => updateBooking(index, 'customerId', e.target.value)}
                 />
@@ -96,7 +108,7 @@ const EditHotelBookings = () => {
               </td>
               <td>
                 <input
-                  type="text"
+                  type="number"
                   value={booking.bookingId}
                   onChange={(e) => updateBooking(index, 'bookingId', e.target.value)}
                 />
@@ -119,9 +131,11 @@ const EditHotelBookings = () => {
                 <button onClick={() => deleteBooking(index)} id="delete"><i className="fa-solid fa-trash"></i></button>
               </td>
             </tr>
+          
           ))}
         </tbody>
       </table>
+      <button onClick={saveChains} id="save">Save</button>
     </div>
   );
 };
