@@ -26,7 +26,7 @@ const initialChains = [
   
 
 const EditHotelChains = () => {
-  const [hotelchains, setHotelBookings] = useState(initialChains);
+  const [hotelchains, setHotelChains] = useState(initialChains);
 
   const addBooking = () => {
     const newHotelChain = {
@@ -40,12 +40,12 @@ const EditHotelChains = () => {
       postal_code: '',
       
     };
-    setHotelBookings([...hotelchains, newHotelChain]);
+    setHotelChains([...hotelchains, newHotelChain]);
   };
 
   const deleteBooking = (index) => {
     const newBookings = hotelchains.filter((_, i) => i !== index);
-    setHotelBookings(newBookings);
+    setHotelChains(newBookings);
   };
 
   const updateBooking = (index, column, value) => {
@@ -55,7 +55,7 @@ const EditHotelChains = () => {
     } else {
       updatedBookings[index][column] = value;
     }
-    setHotelBookings(updatedBookings);
+    setHotelChains(updatedBookings);
   };
   
   

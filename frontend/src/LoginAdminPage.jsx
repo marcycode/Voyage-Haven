@@ -18,7 +18,7 @@ function LoginAdminPage() {
       navigate('/adminhomepage');
     } else {
       // Set an error message if credentials are invalid
-      setError('Invalid credentials. Please try again.');
+      setError('Invalid credentials.Try again');
     }
   };
 

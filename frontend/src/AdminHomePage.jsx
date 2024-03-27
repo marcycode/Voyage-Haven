@@ -10,7 +10,7 @@ function AdminHomePage() {
   };
 
   const handleEditEmployee = () => {
-    navigate('/employee-login');
+    navigate('/edithotelemployees');
   };
 
   return (
