@@ -59,7 +59,7 @@ const EditEmployees = () => {
   const updateEmployee = (index, column, value) => {
     const updatedEmployees = [...employees];
     if (column === 'hotel_p_number' || column === 'ssn') {
-      updatedEmployees[index][column] = value.trim(); // Assuming you want to keep these as strings
+      updatedEmployees[index][column] = value.trim();
     } else {
       updatedEmployees[index][column] = value;
     }
@@ -80,7 +80,7 @@ const EditEmployees = () => {
                 <tr> 
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Hotel P Number</th>
+                    <th>Hotel Phone Number</th>
                     <th>SSN</th>
                     <th>Role</th>
                    

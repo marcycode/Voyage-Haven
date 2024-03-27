@@ -13,6 +13,7 @@ import AdminHomePage from './AdminHomePage';
 import EditHotelBookings from './EditHotelBookings';
 import EditHotelChains from './EditHotelChains';
 import EditEmployees from './EditEmployees';
+import RoomBookingForm from './RoomBookingForm';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path = "/edithotelbookings" element={<EditHotelBookings/>}/>
           <Route path = "/edithotelchains" element={<EditHotelChains/>}/>
           <Route path = "/edithotelemployees" element={<EditEmployees/>}/>
+          <Route path = "/room-booking/form" element={<RoomBookingForm/>}/>
           
 
         </Routes>
