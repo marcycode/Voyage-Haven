@@ -9,6 +9,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class HotelChainId implements Serializable {
     @Column(name = "chain_p_number")
     private Long chainPNumber;

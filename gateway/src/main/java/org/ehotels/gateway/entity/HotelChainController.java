@@ -1,6 +1,8 @@
 package org.ehotels.gateway.entity;
 
 import org.ehotels.gateway.repositories.HotelChainRepo;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +17,7 @@ public class HotelChainController {
     }
 
     @GetMapping("/chains")
-    List<HotelChain> all() {
-        return repo.findAll();
+    ResponseEntity<List<HotelChain>> all() {
+        return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
     }
 }

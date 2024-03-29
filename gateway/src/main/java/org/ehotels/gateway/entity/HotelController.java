@@ -17,8 +17,8 @@ public class HotelController {
     }
 
     @GetMapping("/hotels")
-    List<Hotel> allHotels() {
-        return hotelRepo.findAll();
+    ResponseEntity<List<Hotel>> allHotels() {
+        return new ResponseEntity<>(hotelRepo.findAll(), HttpStatus.OK);
     }
 
     @PostMapping(value = "/hotels",
