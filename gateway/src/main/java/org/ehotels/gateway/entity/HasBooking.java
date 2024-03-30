@@ -22,7 +22,7 @@ public class HasBooking {
 
     @Id
     @Column(name = "hotel_p_number")
-    private int hotelPNumber;
+    private Long hotelPNumber;
 
     @Id
     @Column(name = "room_number")

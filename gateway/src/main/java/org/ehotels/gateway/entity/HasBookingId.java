@@ -16,7 +16,7 @@ public class HasBookingId {
     private String hotelContactEmail;
 
     @Column(name = "hotel_p_number")
-    private int hotelPNumber;
+    private Long hotelPNumber;
 
     @Column(name = "room_number")
     private int roomNumber;
