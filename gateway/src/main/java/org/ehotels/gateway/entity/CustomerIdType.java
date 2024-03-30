@@ -1,2 +1,6 @@
-package org.ehotels.gateway.entity;public class CustomerIdType {
+package org.ehotels.gateway.entity;
+
+public enum CustomerIdType {
+    SIN,
+    LICENCE
 }
