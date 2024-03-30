@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 public class CustomerController {
-    CustomerRepo customerRepo;
+    private final CustomerRepo customerRepo;
 
     public CustomerController(CustomerRepo customerRepo) {
         this.customerRepo = customerRepo;

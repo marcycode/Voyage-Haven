@@ -12,9 +12,9 @@ import java.util.List;
 
 @RestController
 public class HasHotelController {
-    HasHotelRepo hasHotelRepo;
-    HotelRepo hotelRepo;
-    HotelChainRepo hotelChainRepo;
+    private final HasHotelRepo hasHotelRepo;
+    private final HotelRepo hotelRepo;
+    private final HotelChainRepo hotelChainRepo;
 
     public HasHotelController(HasHotelRepo hasHotelRepo, HotelRepo hotelRepo, HotelChainRepo hotelChainRepo) {
         this.hasHotelRepo = hasHotelRepo;
