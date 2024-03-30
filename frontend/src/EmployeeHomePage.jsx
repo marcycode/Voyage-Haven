@@ -20,14 +20,21 @@ function EmployeeHomePage() {
           <div className="icon-container">
             <span className="icon"><i className="fa-regular fa-user"></i></span>
           </div>
-          <h2>Edit Hotel Bookings</h2>
+          <h2>Manage Room Bookings</h2>
+        </div>
+        <div className="login-option" id="availablerooms" onClick={handleEmployeeClick}>
+          <div className="icon-container">
+            <span className="icon"><i className="fa-regular fa-user"></i></span>
+          </div>
+          <h2>View Available Rooms</h2>
         </div>
         <div className="login-option" id="admin" onClick={handleAdminClick}>
           <div className="icon-container">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
           </div>
-          <h2>My Information</h2>
+          <h2>My Profile</h2>
         </div>
+       
       </div>
     </div>
   );

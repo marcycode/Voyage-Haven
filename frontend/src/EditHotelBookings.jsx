@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './EditHotelBookings.css';
 
+
+
 const initialBookings = [
   {
     customerId: 1,
@@ -51,6 +53,8 @@ const EditHotelBookings = () => {
     const newBookings = bookings.filter((_, i) => i !== index);
     setBookings(newBookings);
   };
+  
+  
 
   const updateBooking = (index, column, value) => {
     const updatedBookings = [...bookings];
@@ -75,7 +79,7 @@ const EditHotelBookings = () => {
 
   return (
     <div className='everything'>
-        <h1> Edit Hotel Bookings</h1>
+        <h1> Edit Room Bookings</h1>
       <button onClick={addBooking} id="add"><i className="fa-solid fa-add"></i></button>
       <table className="bookingsTable">
         <thead>

@@ -7,12 +7,14 @@ const HomePage = () => {
     <section className="hero" style={{ backgroundImage: `url(${ImgHero})` }}>
       <div className="content">
         <h1>Ensuring your next trip is your <br></br> best trip</h1>
+
         <p>
           {" "}
           
         </p>
+        <button id="book"> Book a Room</button>
       </div>
-    </section>
+    </section> 
 
   )
 }

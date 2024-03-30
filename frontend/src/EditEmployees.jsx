@@ -1,52 +1,28 @@
-import React, { useState } from 'react';
-import './EditHotelBookings.css'; // Change the CSS file name as needed
+import React, { useState, useEffect } from 'react';
+import './EditHotelBookings.css';
 
-const initialEmployees = [
-    {
-      first_name: 'John',
-      last_name: 'Doe',
-      hotel_p_number: 101,
-      ssn: 12346789,
-      role: 'Manager',
-      address: '123 Main St, Anytown, AN',
-    },
-    {
-      first_name: 'Jane',
-      last_name: 'Smith',
-      hotel_p_number: 102,
-      ssn: 98765321,
-      role: 'Receptionist',
-      address: '456 Elm St, Othertown, OT',
-    },
-    {
-      first_name: 'Alice',
-      last_name: 'Johnson',
-      hotel_p_number: 103,
-      ssn: 555555555,
-      role: 'Housekeeper',
-      address: '789 Oak St, Sometown, ST',
-    },
-    {
-      first_name: 'Bob',
-      last_name: 'Brown',
-      hotel_p_number: 104,
-      ssn: 222,
-      role: 'Chef',
-      address: '321 Pine St, Anothertown, AT',
-    }
-  ];
-  
 const EditEmployees = () => {
-  const [employees, setEmployees] = useState(initialEmployees);
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/employees')
+      .then(response => response.json())
+      .then(data => setEmployees(data))
+      .catch(error => console.error('Error fetching employees:', error));
+  }, []);
 
   const addEmployee = () => {
     const newEmployee = {
-      first_name: '',
-      last_name: '',  
-      hotel_p_number: '',
+      firstName: '',
+      lastName: '',
+      employeeRole: '',
       ssn: '',
-      role: '',
-      address: '',
+      postalCode: '',
+      region: '',
+      city: '',
+      streetNumber: '',
+      streetName: '',
+      apartmentNumber: ''
     };
     setEmployees([...employees, newEmployee]);
   };
@@ -56,93 +32,146 @@ const EditEmployees = () => {
     setEmployees(newEmployees);
   };
 
-  const updateEmployee = (index, column, value) => {
+  const updateEmployee = (index, key, value) => {
     const updatedEmployees = [...employees];
-    if (column === 'hotel_p_number' || column === 'ssn') {
-      updatedEmployees[index][column] = value.trim();
-    } else {
-      updatedEmployees[index][column] = value;
-    }
+    updatedEmployees[index][key] = value;
     setEmployees(updatedEmployees);
   };
 
   const saveEmployees = () => {
-    const employeesJson = JSON.stringify(employees);
-    console.log(employeesJson);
+    
+    Promise.all(employees.map(employee => {
+      const url = `http://localhost:8080/employees`; 
+      return fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        
+        },
+        body: JSON.stringify(employee),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+    }))
+    .then(() => {
+    
+      console.log('All employees updated');
+     
+    });
   };
+  
 
   return (
     <div className='everything'>
-        <h1>Edit Employees</h1>
-        <button onClick={addEmployee} id="add"><i className="fa-solid fa-add"></i></button>
-        <table className="employeesTable">
-            <thead>
-                <tr> 
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Hotel Phone Number</th>
-                    <th>SSN</th>
-                    <th>Role</th>
-                   
-                    <th>Address</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {employees.map((employee, index) => (
-                    <tr key={index}>
-                        <td>
-                            <input
-                                type="text"
-                                value={employee.first_name}
-                                onChange={(e) => updateEmployee(index, 'first_name', e.target.value)}
-                            />
-                        </td>
-                        <td>
-                            <input
-                                type="text"
-                                value={employee.last_name}
-                                onChange={(e) => updateEmployee(index, 'last_name', e.target.value)}
-                            />
-                        </td>
-                        <td>
-                            <input
-                                type="number"
-                                value={employee.hotel_p_number}
-                                onChange={(e) => updateEmployee(index, 'hotel_p_number', e.target.value)}
-                            />
-                        </td>
-                        <td>
-                            <input
-                                type="number"
-                                value={employee.ssn}
-                                onChange={(e) => updateEmployee(index, 'ssn', e.target.value)}
-                            />
-                        </td>
-                        <td>
-                            <input
-                                type="text"
-                                value={employee.role}
-                                onChange={(e) => updateEmployee(index, 'role', e.target.value)}
-                            />
-                        </td>
-                        
-                        <td>
-                            <input
-                                type="text"
-                                id="addressemployees"
-                                value={employee.address}
-                                onChange={(e) => updateEmployee(index, 'address', e.target.value)}
-                            />
-                        </td>
-                        <td>
-                            <button onClick={() => deleteEmployee(index)} id="delete"><i className="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-        <button onClick={saveEmployees} id="save">Save</button>
+      <h1>Edit Employees</h1>
+      <button onClick={addEmployee} id="add">+</button>
+      <table className="employeesTable">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>SSN</th>
+            <th>Postal Code</th>
+            <th>Region</th>
+            <th>City</th>
+            <th>Street Number</th>
+            <th>Street Name</th>
+            <th>Apartment Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {employees.map((employee, index) => (
+            <tr key={index}>
+              <td>
+                <input
+                  type="text"
+                  value={employee.firstName || ''}
+                  onChange={(e) => updateEmployee(index, 'firstName', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={employee.lastName || ''}
+                  onChange={(e) => updateEmployee(index, 'lastName', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={employee.employeeRole || ''}
+                  onChange={(e) => updateEmployee(index, 'employeeRole', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="ssn"
+                  value={employee.ssn || ''}
+                  onChange={(e) => updateEmployee(index, 'ssn', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={employee.postalCode || ''}
+                  onChange={(e) => updateEmployee(index, 'postalCode', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="region"
+                  value={employee.region || ''}
+                  onChange={(e) => updateEmployee(index, 'region', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={employee.city || ''}
+                  onChange={(e) => updateEmployee(index, 'city', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={employee.streetNumber || ''}
+                  onChange={(e) => updateEmployee(index, 'streetNumber', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="streetName"
+                  value={employee.streetName || ''}
+                  onChange={(e) => updateEmployee(index, 'streetName', e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={employee.apartmentNumber || ''}
+                  onChange={(e) => updateEmployee(index, 'apartmentNumber', e.target.value)}
+                />
+              </td>
+              <td>
+                <button onClick={() => deleteEmployee(index)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <button onClick={saveEmployees} id="save">Save</button>
     </div>
   );
 };

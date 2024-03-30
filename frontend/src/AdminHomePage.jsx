@@ -12,6 +12,9 @@ function AdminHomePage() {
   const handleEditEmployee = () => {
     navigate('/edithotelemployees');
   };
+  const handleEditHotel = () => {
+    navigate('/edithotels');
+  }
 
   return (
     <div className="login-home">
@@ -22,11 +25,17 @@ function AdminHomePage() {
           </div>
           <h2>Edit Hotel Chains</h2>
         </div>
+        <div className="login-option" id="employee" onClick={handleEditHotel}>
+          <div className="icon-container">
+            <span className="icon"><i className="fa-regular fa-user"></i></span>
+          </div>
+          <h2>Edit Hotels</h2>
+        </div>
         <div className="login-option" id="admin" onClick={handleEditEmployee}>
           <div className="icon-container">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
           </div>
-          <h2>Edit Employees</h2>
+          <h2>Employee Management</h2>
         </div>
       </div>
     </div>
