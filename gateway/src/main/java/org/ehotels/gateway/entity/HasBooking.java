@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "has_booking")
+@IdClass(HasBookingId.class)
 public class HasBooking {
     @Id
     @Column(name = "booking_id")
