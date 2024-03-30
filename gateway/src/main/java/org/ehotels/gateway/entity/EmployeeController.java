@@ -28,6 +28,13 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeRepo.save(employee), HttpStatus.CREATED);
     }
 
+    @PutMapping(value = "/employees",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
+        return new ResponseEntity<>(employeeRepo.save(employee), HttpStatus.CREATED);
+    }
+
     @DeleteMapping("employees")
     void deleteEmployee(@RequestParam String ssn) {
         employeeRepo.deleteById(ssn);

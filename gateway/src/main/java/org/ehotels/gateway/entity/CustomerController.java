@@ -38,6 +38,11 @@ public class CustomerController {
         }
     }
 
+    @PutMapping("/customers")
+    ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) {
+        return createCustomer(customer);
+    }
+
     @DeleteMapping("/customers")
     void deleteCustomer(@RequestParam Integer id) {
         customerRepo.deleteById(id);
