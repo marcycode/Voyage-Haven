@@ -1,5 +1,6 @@
 package org.ehotels.gateway.entity;
 
+import org.ehotels.gateway.repositories.HasHotelRepo;
 import org.ehotels.gateway.repositories.HotelRepo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
