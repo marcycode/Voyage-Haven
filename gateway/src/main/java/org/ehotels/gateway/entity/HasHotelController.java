@@ -6,10 +6,7 @@ import org.ehotels.gateway.repositories.HotelRepo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -47,6 +44,20 @@ public class HasHotelController {
         }
 
         return new ResponseEntity<>(hasHotelRepo.save(hasHotel), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(value = "/hashotel")
+    void deleteHasHotel(@RequestParam Long hotelphone,
+                        @RequestParam String hotelemail,
+                        @RequestParam Long chainphone,
+                        @RequestParam String chainemail) {
+        HasHotelId hasHotelId = HasHotelId.builder()
+                .hotelPNumber(hotelphone)
+                .hotelContactEmail(hotelemail)
+                .chainPNumber(chainphone)
+                .chainContactEmail(chainemail)
+                .build();
+        hasHotelRepo.deleteById(hasHotelId);
     }
 
 }
