@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HotelChains.css';
 import hotelImage from './assets/thirdnavbar.jpg'; // Placeholder image for all hotels
 import { Link } from 'react-router-dom';
 
 const HotelChains = () => {
+
+    const [hotelChains, setHotelChains] = useState([]);
+
+    useEffect(() => {
+        // TODO: Make the host a global variable? 
+        fetch(`http://localhost:8080/chains`).then((res) => {
+            return res.json();
+        }).then((data) => {
+            console.table(data);
+            setHotelChains(data);
+        });
+    }, [])
+
     // Array of example hotel data
     const hotels = [
         {
@@ -27,17 +40,17 @@ const HotelChains = () => {
 
     return (
         <div className="hotel-chains">
-            {hotels.map((hotel) => (
-                <Link key={hotel.id} to={`/hotels/${hotel.id}`}>
+            {hotelChains.map((hotelChain, i) => (
+                <Link key={i} to={`/hotels/${i}`}>
                     <div className="hotel-card">
-                        <img src={hotel.image} alt={hotel.name} className="hotel-image"/>
+                        <img src={hotelImage} alt={hotelImage} className="hotel-image"/>
                         <div className="hotel-info">
-                            <h3>{hotel.name}</h3>
-                            <button className="rating-button">{hotel.rating}</button>
-                            <div className="price-range">{hotel.priceRange}</div>
+                            <h3>{"Hotel Chain " + i}</h3>
+                            <button className="rating-button">{"Number of Hotels: " + hotelChain.numOfHotels}</button>
+                            {/* <div className="price-range">{hotelChain.chainContactEmail}</div> */}
                         </div>
-                        <div className='hotel-description'>
-                            {hotel.description}
+                        <div className='hotelChain-description'>
+                            {hotelChain.streetNumber + " " + hotelChain.streetName + ", " + hotelChain.city}
                         </div>
                     </div>
                 </Link>
