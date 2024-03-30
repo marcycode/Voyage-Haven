@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 @RestController
@@ -22,7 +24,18 @@ public class CustomerController {
 
     @PostMapping("/customers")
     ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
-        return new ResponseEntity<>(customerRepo.save(customer), HttpStatus.CREATED);
+        Iterator<CustomerIdType> typeIterator = Arrays.stream(CustomerIdType.values()).iterator();
+
+        if (customer.getTypeOfId() != null) {
+            while (typeIterator.hasNext()) {
+                if (typeIterator.next().getStrMapping().equals(customer.getTypeOfId())) {
+                    return new ResponseEntity<>(customerRepo.save(customer), HttpStatus.CREATED);
+                }
+            }
+            return new ResponseEntity<>(HttpStatus.PRECONDITION_FAILED);
+        } else {
+            return new ResponseEntity<>(customerRepo.save(customer), HttpStatus.CREATED);
+        }
     }
 
     @DeleteMapping("/customers")

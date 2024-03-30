@@ -21,7 +21,7 @@ public class Customer {
     private Integer customerId;
 
     @Column(name = "type_of_id")
-    private CustomerIdType typeOfId;
+    private String typeOfId;
 
     @Column(name = "first_name")
     private String firstName;
