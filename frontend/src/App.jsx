@@ -15,6 +15,7 @@ import EditHotelChains from './EditHotelChains';
 import EditEmployees from './EditEmployees';
 import RoomBookingForm from './RoomBookingForm';
 import EditHotels from './EditHotels';
+import RoomResults from './RoomResults';
 
 function App() {
   return (
@@ -37,9 +38,7 @@ function App() {
           <Route path = "/edithotelemployees" element={<EditEmployees/>}/>
           <Route path = "/room-booking/form" element={<RoomBookingForm/>}/>
           <Route path = "/edithotels" element={<EditHotels/>}/>
-          
-          
-
+          <Route path = "/roomresults" element={<RoomResults/>}/>          
         </Routes>
       </div>
     </Router>
