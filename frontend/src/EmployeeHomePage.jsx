@@ -6,12 +6,15 @@ function EmployeeHomePage() {
   const navigate = useNavigate();
 
   const handleAdminClick = () => {
-    navigate('/edithotelbookings');
+    navigate('/editcustomers');
   };
 
   const handleEmployeeClick = () => {
-    navigate('/edithotelbookings');
+    navigate('/editcustomers');
   };
+  const handleRoomClick = () => {
+    navigate('/editrooms')
+  }
 
   return (
     <div className="login-home">
@@ -20,9 +23,9 @@ function EmployeeHomePage() {
           <div className="icon-container">
             <span className="icon"><i className="fa-regular fa-user"></i></span>
           </div>
-          <h2>Manage Room Bookings</h2>
+          <h2>Manage Customers</h2>
         </div>
-        <div className="login-option" id="availablerooms" onClick={handleEmployeeClick}>
+        <div className="login-option" id="availablerooms" onClick={handleRoomClick}>
           <div className="icon-container">
             <span className="icon"><i className="fa-regular fa-user"></i></span>
           </div>
@@ -32,7 +35,7 @@ function EmployeeHomePage() {
           <div className="icon-container">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
           </div>
-          <h2>My Profile</h2>
+          <h2>Edit Hotel Bookings</h2>
         </div>
        
       </div>

@@ -41,10 +41,28 @@ const EditHotelChains = () => {
     setHotelChains([...hotelchains, newHotelChain]);
   };
 
-  const deleteBooking = (index) => {
-    const newBookings = hotelchains.filter((_, i) => i !== index);
-    setHotelChains(newBookings);
+  const deleteBooking = (chainId, index) => {
+    // Make sure this is the correct URL for your DELETE request
+    const url = `http://localhost:8080/hotelChains?chain_p_number=${chainId}`;
+  
+    fetch(url, {
+      method: 'DELETE',
+      // Include any necessary headers, such as Authorization headers if needed
+    })
+    .then(response => {
+      if (!response.ok) {
+        // If the HTTP status code is not in the 200-299 range
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+      // Successfully deleted on the server, now remove from the state
+      setHotelChains(currentChains => currentChains.filter((_, i) => i !== index));
+    })
+    .catch(error => {
+      console.error('There was a problem with the deletion operation:', error);
+    });
   };
+  
+  
 
   const updateBooking = (index, column, value) => {
     const updatedBookings = [...hotelchains];
@@ -140,7 +158,7 @@ const EditHotelChains = () => {
                 />
               </td>
               <td>
-                <button onClick={() => deleteBooking(index)} id="delete"><i className="fa-solid fa-trash"></i></button>
+              <button onClick={() => deleteBooking(hotelchain.chainPNumber, index)} className="deleteButton">Delete</button>
               </td>
             </tr>
           ))}

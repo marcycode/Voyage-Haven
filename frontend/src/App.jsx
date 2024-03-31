@@ -16,6 +16,7 @@ import EditEmployees from './EditEmployees';
 import RoomBookingForm from './RoomBookingForm';
 import EditHotels from './EditHotels';
 import RoomResults from './RoomResults';
+import EditRooms from './EditRooms';
 
 function App() {
   return (
@@ -33,12 +34,17 @@ function App() {
 
           <Route path = "/room-booking" element={<RoomBooking/>}/>
           <Route path = "/adminhomepage" element={<AdminHomePage/>}/>
-          <Route path = "/edithotelbookings" element={<EditHotelBookings/>}/>
+          <Route path = "/editcustomers" element={<EditHotelBookings/>}/>
           <Route path = "/edithotelchains" element={<EditHotelChains/>}/>
           <Route path = "/edithotelemployees" element={<EditEmployees/>}/>
           <Route path = "/room-booking/form" element={<RoomBookingForm/>}/>
           <Route path = "/edithotels" element={<EditHotels/>}/>
           <Route path = "/roomresults" element={<RoomResults/>}/>          
+          <Route path = "/editrooms" element={<EditRooms/>}/>
+
+          
+          
+
         </Routes>
       </div>
     </Router>

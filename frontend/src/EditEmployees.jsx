@@ -27,10 +27,26 @@ const EditEmployees = () => {
     setEmployees([...employees, newEmployee]);
   };
 
-  const deleteEmployee = (index) => {
-    const newEmployees = employees.filter((_, i) => i !== index);
-    setEmployees(newEmployees);
+  const deleteEmployee = (employeeId, index) => {
+    const url = `http://localhost:8080/employees?ssn=${employeeId}`; 
+  
+    fetch(url, {
+      method: 'DELETE',
+    
+    })
+    .then(response => {
+      if (!response.ok) {
+       
+        throw new Error(`Network response was not ok, status ${response.status}`);
+      }
+     
+      setEmployees(currentEmployees => currentEmployees.filter((_, i) => i !== index));
+    })
+    .catch(error => {
+      console.error('There was a problem with the deletion operation:', error);
+    });
   };
+  
 
   const updateEmployee = (index, key, value) => {
     const updatedEmployees = [...employees];
@@ -164,8 +180,8 @@ const EditEmployees = () => {
                   onChange={(e) => updateEmployee(index, 'apartmentNumber', e.target.value)}
                 />
               </td>
-              <td>
-                <button onClick={() => deleteEmployee(index)}>Delete</button>
+              <td><button onClick={() => deleteEmployee(employee.ssn, index)}>Delete</button>
+
               </td>
             </tr>
           ))}

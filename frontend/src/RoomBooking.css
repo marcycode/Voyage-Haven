@@ -62,6 +62,15 @@
 
   
 }
+#max{
+  padding: 25px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px; /* Space between the text input and the button */
+  flex: 1; /* Allow the text input to grow and fill the space */
+
+  
+}
 #searchbutton{
   color:white;
   font-size: 1em;
