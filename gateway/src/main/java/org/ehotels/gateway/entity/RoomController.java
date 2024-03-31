@@ -6,7 +6,12 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 public class RoomController {
@@ -43,5 +48,37 @@ public class RoomController {
                 .roomNumber(roomNum)
                 .build();
         roomRepo.deleteById(roomId);
+    }
+
+    @GetMapping("/filter")
+    ResponseEntity<List<Room>> filterByDate(@RequestParam String startDate, @RequestParam String endDate, @RequestParam Float maxPrice)  throws ParseException {
+        List<Room> result = new LinkedList<>();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+
+        Date startFormatted = formatter.parse(startDate);
+        Date endFormatted = formatter.parse(endDate);
+
+        List<String> raw = roomRepo.filterByDate(startFormatted, endFormatted);
+        for (String line : raw) {
+            String[] row = line.split(",");
+            if (!row[0].equals("null") &&
+                    !row[1].equals("null") &&
+                    !row[2].equals("null")) {
+                RoomId roomId = RoomId.builder()
+                        .hotelContactEmail(row[0])
+                        .hotelPNumber(Long.parseLong(row[1]))
+                        .roomNumber(Integer.parseInt(row[2]))
+                        .build();
+                if (roomRepo.findById(roomId).isPresent()) {
+                    Room room = roomRepo.findById(roomId).get();
+                    if (room.getPrice() <= maxPrice) {
+                        result.add(room);
+                    }
+                }
+            }
+        }
+
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }
