@@ -47,6 +47,7 @@ const RoomBooking = () => {
             <input
               type="number"
               placeholder="Max Price"
+              id="max"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
             />

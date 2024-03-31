@@ -15,6 +15,9 @@ function EmployeeHomePage() {
   const handleRoomClick = () => {
     navigate('/editrooms')
   }
+  const handlebookingsClick = () => {
+    navigate('/edithotelbookings');
+  }
 
   return (
     <div className="login-home">
@@ -29,9 +32,9 @@ function EmployeeHomePage() {
           <div className="icon-container">
             <span className="icon"><i className="fa-regular fa-user"></i></span>
           </div>
-          <h2>View Available Rooms</h2>
+          <h2>View Rooms</h2>
         </div>
-        <div className="login-option" id="admin" onClick={handleAdminClick}>
+        <div className="login-option" id="admin" onClick={handlebookingsClick}>
           <div className="icon-container">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
           </div>
