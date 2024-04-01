@@ -1,10 +1,10 @@
 import React from 'react';
 import './HotelChains.css';
-import hotelImage from './assets/thirdnavbar.jpg'; // Placeholder image for all hotels
+import hotelImage from './assets/thirdnavbar.jpg'; 
 import { Link } from 'react-router-dom';
 
 const HotelChains = () => {
-    // Array of example hotel data
+    
     const hotels = [
         {
             id: 1,
@@ -22,7 +22,7 @@ const HotelChains = () => {
             priceRange: '$100-$200',
             description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit...'
         },
-        // ... more hotels
+      
     ];
 
     return (

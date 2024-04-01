@@ -6,7 +6,7 @@ const EditBookings = () => {
 
   function convertTimestampToDateString(timestamp) {
     const date = new Date(timestamp);
-    return date.toISOString().split('T')[0]; // This will give you 'YYYY-MM-DD'
+    return date.toISOString().split('T')[0]; 
   }
   function convertDateStringToTimestamp(dateString) {
     return new Date(dateString).getTime();
@@ -44,22 +44,21 @@ const EditBookings = () => {
   
 
   const deleteBooking = (bookingId, index) => {
-    // Ensure the bookingId is not null or undefined
+   
     if (bookingId) {
       const url = `http://localhost:8080/bookings?bookingId=${bookingId}`;
   
       fetch(url, {
         method: 'DELETE',
         headers: {
-          // Include headers if necessary, for example:
-          // 'Authorization': 'Bearer YourAuthToken'
+        
         }
       })
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.status}`);
         }
-        // Filter out the booking from the state
+      
         setBookings(currentBookings => currentBookings.filter((_, i) => i !== index));
       })
       .catch(error => {

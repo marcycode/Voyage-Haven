@@ -4,7 +4,7 @@ import './EditHotelChains.css';
 const EditHotelChains = () => {
   const initialChains = [
     {
-      chainPNumber: 5653990059, // Stored as integer
+      chainPNumber: 5653990059, 
       chainContactEmail: 'christopherlee@young.com',
       num_of_hotels: 26,
       postal_code: '80811',
@@ -14,7 +14,7 @@ const EditHotelChains = () => {
       streetName: 'Jessica Well'
     },
     {
-      chainPNumber: 13374339000, // Stored as integer
+      chainPNumber: 13374339000,
       chainContactEmail: 'kevinmorales@harris.com',
       num_of_hotels: 20,
       postal_code: '82310',
@@ -29,7 +29,7 @@ const EditHotelChains = () => {
 
   const addBooking = () => {
     const newHotelChain = {
-      chainPNumber: 0, // Default to 0 as an integer
+      chainPNumber: 0, 
       chainContactEmail: '',
       num_of_hotels: 0,
       postal_code: '',
@@ -42,19 +42,19 @@ const EditHotelChains = () => {
   };
 
   const deleteBooking = (chainId, index) => {
-    // Make sure this is the correct URL for your DELETE request
+   
     const url = `http://localhost:8080/hotelChains?chain_p_number=${chainId}`;
   
     fetch(url, {
       method: 'DELETE',
-      // Include any necessary headers, such as Authorization headers if needed
+      
     })
     .then(response => {
       if (!response.ok) {
-        // If the HTTP status code is not in the 200-299 range
+      
         throw new Error(`Network response was not ok: ${response.status}`);
       }
-      // Successfully deleted on the server, now remove from the state
+     
       setHotelChains(currentChains => currentChains.filter((_, i) => i !== index));
     })
     .catch(error => {
@@ -66,7 +66,7 @@ const EditHotelChains = () => {
 
   const updateBooking = (index, column, value) => {
     const updatedBookings = [...hotelchains];
-    // Convert to number for specific fields, including chainPNumber
+   
     if (['chainPNumber', 'num_of_hotels', 'streetNumber'].includes(column)) {
       updatedBookings[index][column] = parseInt(value, 10) || 0;
     } else {

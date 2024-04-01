@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./HotelChains.css";
-import hotelImage from "./assets/thirdnavbar.jpg"; // Placeholder image for all hotels
+import hotelImage from "./assets/thirdnavbar.jpg";
 import { Link } from "react-router-dom";
 
 const RoomResults = () => {
@@ -29,7 +29,7 @@ const RoomResults = () => {
             <img src={hotelImage} alt="Room Image" className="hotel-image" />
             <div className="hotel-info">
               <h3>{"Room Option #" + (i+1)}</h3>
-              {/* <button className="rating-button">{room.rating}</button> */}
+             
               <div className="price-range">{"$" + room.price}</div>
             </div>
             <div className="hotel-description">{room.description}</div>

@@ -50,15 +50,15 @@
   padding: 25px;
   border: 2px solid #ccc;
   border-radius: 20px;
-  margin-right: 10px; /* Space between the text input and the button */
-  flex: 1; /* Allow the text input to grow and fill the space */
+  margin-right: 10px; 
+  flex: 1; 
 }
 .search-inputs input[type="date"]{
   padding: 25px;
   border: 2px solid #ccc;
   border-radius: 20px;
-  margin-right: 10px; /* Space between the text input and the button */
-  flex: 1; /* Allow the text input to grow and fill the space */
+  margin-right: 10px; 
+  flex: 1;
 
   
 }
@@ -66,8 +66,8 @@
   padding: 25px;
   border: 2px solid #ccc;
   border-radius: 20px;
-  margin-right: 10px; /* Space between the text input and the button */
-  flex: 1; /* Allow the text input to grow and fill the space */
+  margin-right: 10px; 
+  flex: 1; 
 
   
 }
@@ -132,14 +132,13 @@
 }
 
 
-/* Additional styles to align the filter inputs to the left */
 .filters .form-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns filter inputs to the left */
+  align-items: flex-start; 
 }
 
-/* Style for the results section */
+
 
 .error-message {
   color: red;
@@ -147,17 +146,17 @@
 }
 
 .login-btn {
-  background-color: #28a745; /* Bootstrap green */
+  background-color: #28a745; 
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  display: block; /* Make the button take the full container width */
+  display: block; 
   width: 100%;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .search-inputs,
   .filters {
@@ -165,15 +164,15 @@
   }
 
   .search-inputs input[type="text"] {
-    margin-bottom: 10px; /* Add space when stacked */
+    margin-bottom: 10px; 
   }
 
   .search-inputs button {
-    width: 100%; /* Full width on small screens */
+    width: 100%;
   }
   
   .filters .form-group {
-    align-items: stretch; /* Makes filter inputs take full width */
+    align-items: stretch;
   }
 }
 

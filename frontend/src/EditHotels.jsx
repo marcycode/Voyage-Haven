@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './EditHotelBookings.css'; // Reusing the same CSS for consistency in styling
+import './EditHotelBookings.css'; 
 
 const EditHotels = () => {
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/hotels') // Replace with the actual endpoint for hotels
+    fetch('http://localhost:8080/hotels') 
       .then(response => response.json())
       .then(data => setHotels(data))
       .catch(error => console.error('Error fetching hotels:', error));
@@ -39,9 +39,9 @@ const EditHotels = () => {
 
   const saveHotels = () => {
     Promise.all(hotels.map(hotel => {
-      const url = 'http://localhost:8080/hotels'; // Replace with the actual endpoint for hotels
+      const url = 'http://localhost:8080/hotels'; 
       return fetch(url, {
-        method: 'PUT', // or 'POST', depending on how your API handles updates
+        method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',
         },
@@ -51,7 +51,7 @@ const EditHotels = () => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        return response.json(); // If your PUT endpoint responds with JSON
+        return response.json(); 
       })
       .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);

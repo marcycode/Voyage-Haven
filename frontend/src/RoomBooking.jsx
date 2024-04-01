@@ -4,7 +4,7 @@ import ImgHero from "./assets/homebanner.jpg";
 import { useNavigate } from "react-router";
 
 const RoomBooking = () => {
-  // State for each input field
+  
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
@@ -14,7 +14,7 @@ const RoomBooking = () => {
     e.preventDefault();
     console.log(startDate);
     console.log(endDate);
-    //TODO fix me
+    
     navigate(`/roomresults?startDate=${startDate}&endDate=${endDate}&maxPrice=${maxPrice}`);
   };
 

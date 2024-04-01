@@ -9,15 +9,15 @@ function LoginAdminPage() {
   const [error, setError] = useState('');
 
   const handleLogin = (e) => {
-    e.preventDefault(); // Prevent the default form submission action
-    // Check if the credentials are correct
+    e.preventDefault(); 
+    
     if (username === 'admin' && password === 'password') {
-      // Reset any existing error message
+      
       setError('');
-      // Navigate to the Admin Homepage
+      
       navigate('/adminhomepage');
     } else {
-      // Set an error message if credentials are invalid
+      
       setError('Invalid credentials.Try again');
     }
   };
@@ -30,8 +30,8 @@ function LoginAdminPage() {
         <form onSubmit={handleLogin}>
           <div className="form-group">
             <input
-              type="text" // Username should typically be of type text, not email
-              placeholder="Username" // Changed to 'Username'
+              type="text" 
+              placeholder="Username" 
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />

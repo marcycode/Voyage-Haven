@@ -21,16 +21,16 @@ const RoomBookingForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Convert bookingType to is_rent boolean
+    
     const is_rent = formData.bookingType === 'Renting';
     const dataToSend = {
       ...formData,
-      is_rent, // Adds the is_rent boolean to the data object
-      bookingType: undefined, // Remove bookingType from the object
+      is_rent, 
+      bookingType: undefined, 
     };
-    delete dataToSend.bookingType; // Ensures bookingType is removed before sending
-    console.log(JSON.stringify(dataToSend)); // For demonstration, replace this with your actual send logic
-    // Implement your logic to send dataToSend as a JSON object
+    delete dataToSend.bookingType; 
+    console.log(JSON.stringify(dataToSend)); 
+    
   };
 
   return (

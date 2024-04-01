@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './EditHotelBookings.css'; // Ensure this CSS file contains all the necessary styles
+import './EditHotelBookings.css';
 
 const EditHotelBookings = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/customers') // Adjust the endpoint as needed
+    fetch('http://localhost:8080/customers') 
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

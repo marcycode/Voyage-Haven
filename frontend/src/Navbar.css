@@ -1,5 +1,5 @@
 .navbar {
-    position: fixed; /* Make it fixed to the top */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
@@ -9,7 +9,7 @@
     background-color: transparent;
     color: white;
     padding: 30px;
-    z-index: 1000; /* Ensure it stays on top of other content */
+    z-index: 1000;
     border-color: black;
     font-family: 'Montserrat';
     font-weight: 200;
@@ -17,7 +17,7 @@
     border-bottom-width: 1px;
   }
   
-  /* Keep the rest of the styles unchanged */
+ 
   .navbar-logo a {
     color: white;
     text-decoration: none;

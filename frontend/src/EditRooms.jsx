@@ -55,7 +55,7 @@ const EditRooms = () => {
 
   const saveRooms = () => {
     Promise.all(rooms.map(room => {
-      const url = 'http://localhost:8080/rooms'; // Endpoint for updating rooms
+      const url = 'http://localhost:8080/rooms'; 
       return fetch(url, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

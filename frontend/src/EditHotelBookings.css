@@ -16,8 +16,8 @@
 
 #addEmployee {
   padding: 0.5%;
-  width: 10%; /* Adjusted width to better fit the text */
-  background-color: #4CAF50; /* Changed color to differentiate from hotel bookings */
+  width: 10%; 
+  background-color: #4CAF50; 
   color: white;
   border: none;
   cursor: pointer;
